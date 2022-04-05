@@ -31,7 +31,7 @@ async function debugenv(settings) {
     const saasCredentials = template.VCAP_SERVICES?.["saas-registry"]?.[0].credentials;
     let consumer = provider;
     if (saasCredentials) {
-        const consumerNames = await consumerTenants_1.getSubscribedTenantNames(saasCredentials);
+        const consumerNames = await (0, consumerTenants_1.getSubscribedTenantNames)(saasCredentials);
         consumer = (await inquirer_1.default.prompt([
             {
                 type: 'list',

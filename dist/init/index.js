@@ -152,7 +152,7 @@ async function getAppSelection(OrgSpaceApp) {
 }
 async function getCFOauthToken() {
     return new Promise((resolve, reject) => {
-        const tokenCmd = child_process_1.spawn('cf', ['oauth-token']);
+        const tokenCmd = (0, child_process_1.spawn)('cf', ['oauth-token']);
         tokenCmd.stdout.on('data', (data) => {
             if (data.toString().startsWith('bearer')) {
                 const token = data.toString().trim();
@@ -169,7 +169,7 @@ async function getCFOauthToken() {
 }
 async function getCFApiUrl() {
     return new Promise((resolve, reject) => {
-        const apiURLCmd = child_process_1.spawn('cf', ['api']);
+        const apiURLCmd = (0, child_process_1.spawn)('cf', ['api']);
         apiURLCmd.stdout.on('data', (data) => {
             const regex = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gm;
             const result = regex.exec(data.toString());
