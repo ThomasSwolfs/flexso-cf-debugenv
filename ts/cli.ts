@@ -3,7 +3,7 @@ import commandLineArgs from 'command-line-args';
 import { init } from './init';
 import fs from 'fs';
 
-const environmentDir = './.env/provider/'
+const environmentDir = './.debugenv/provider/'
 
 import inquirer from 'inquirer';
 import debugenv, { IDebugEnvSettings } from './debugenv';

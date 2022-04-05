@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const command_line_args_1 = __importDefault(require("command-line-args"));
 const init_1 = require("./init");
 const fs_1 = __importDefault(require("fs"));
-const environmentDir = './.env/provider/';
+const environmentDir = './.debugenv/provider/';
 const inquirer_1 = __importDefault(require("inquirer"));
 const debugenv_1 = __importDefault(require("./debugenv"));
 inquirer_1.default.registerPrompt('directory', require('inquirer-directory'));
